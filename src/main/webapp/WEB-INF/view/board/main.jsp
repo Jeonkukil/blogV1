@@ -4,10 +4,10 @@
 
 <div class="container my-3">
     <div class="my-board-box row">
-
+<%-- src="${dto.thumbnail}" --%>
         <c:forEach items="${dtos}" var="dto">
             <div class="card col-lg-3 pt-2">
-                <img class="card-img-top" style="height: 250px;" src="${dto.thumbnail}" alt="Card image">
+                <img class="card-img-top" style="height: 250px;"  alt="Card image">
                 <hr/>
                 <div class="card-body">
                     <div>작성자 : ${dto.username}</div>
