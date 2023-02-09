@@ -45,9 +45,11 @@ public class UserController {
             throw new CustomException("username을 뒤지기 싫으면 입력해라");
         }
         if (loginReqDto.getPassword() == null || loginReqDto.getPassword().isEmpty()) {
-            throw new CustomException("username은 입력하면서 password는 까먹냐? 미쳤냐?");
+            throw new CustomException("username은 입력하면서 password는 왜 입력하지 않는거죠?");
         }
-        return "";
+        User principal = userService.로그인(loginReqDto);
+        session.setAttribute("principal", principal);
+        return "redirect:/";
 
     }
 
